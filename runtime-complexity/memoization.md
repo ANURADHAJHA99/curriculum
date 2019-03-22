@@ -1,4 +1,4 @@
-# Memoization
+## Memoization
 
 ### Projected Time
 
@@ -29,14 +29,14 @@ part of the code that was already run!
 
 - What is memoization
 - How does memoization improve Runtime Complexity
-	- And how does it compare to recursion
+  - And how does it compare to recursion
 - Writing memoization into code can be very simple:
-	create a hash table
-	add any results in the hash table
-	when new results are derived check to see if those results are in the hash table; 
-	if so, call on the results from the hash table to save time
-	if not, add the new results to the hash table
-	
+  create a hash table
+  add any results in the hash table
+  when new results are derived check to see if those results are in the hash table; 
+  if so, call on the results from the hash table to save time
+  if not, add the new results to the hash table
+  
 
 ### Materials
 
@@ -76,17 +76,15 @@ Notice the difference in Time Complexity between using recursion and a while loo
 
 Finally look at the example code of the Fibonacci Sequence using memoization on slide 13 and again notice the Time Complexity and Space Complexity. 
 
-Take a look at the comparison chart showing runtime complexity and space complexity for different sample size. what is your biggest take away from slides 17 and 18?  
+Take a look at the comparison chart showing runtime complexity and space complexity for different sample size. what is your biggest take away from slides 17 and 18? 
 
 Use the resources on the next few slides to solidify your understanding. Go back and review any of the vocabulary thta you were unsure about at first after you watch the video and go to the links provided. 
-
 
 ### Common Mistakes / Misconceptions
 
 List things that apprentices might not realize, might assume at first, or should avoid.
 
-- Remember:  It’s best to implement memoization on functions that are pure and have repetitive calculations.
-
+- Remember: It’s best to implement memoization on functions that are pure and have repetitive calculations.
 
 
 ### Guided Practice
@@ -96,18 +94,17 @@ Work step by step to change a recursion of Fibonacci Sequence to a memoization v
 Recursion
 ```
 function fibonacci(num) {
-  if (num <= 1) return 1;
+if (num <= 1) return 1;
 
-  return fibonacci(num - 1) + fibonacci(num - 2);
+return fibonacci(num - 1) + fibonacci(num - 2);
 } 
 ```
 
 Memoization
 1. How do we need to change the function definition? 
 Change this line to include 'memo' as an argument in the function definition:
- function fibonacci(num)
+function fibonacci(num)
 What would it look like?
-
 
 Ans:
 ```
@@ -117,7 +114,6 @@ function fibonacci(num, memo)
 2. How do we define 'memo' in the function which was not defined when we used recursion?
 What would you add to the function?
 
-
 Ans: create a hash table to store the data to be used again when called upon.
 ```memo = memo || {};```
 
@@ -126,27 +122,26 @@ Ans: create a hash table to store the data to be used again when called upon.
 ```if (memo[num]) return memo[num]```
 
 4. Write the rest of the function checking for 0 and then calling the memo if it exists. 
-  ```
-  if (num <= 1) return 1;
+```
+if (num <= 1) return 1;
 
-  return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
 }
 ```
 Complete solution using memoization:
 ```
 function fibonacci(num, memo) {
-  memo = memo || {};
+memo = memo || {};
 
-  if (memo[num]) return memo[num];
-  if (num <= 1) return 1;
-  return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+if (memo[num]) return memo[num];
+if (num <= 1) return 1;
+return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
 }
 ```
 
 ### Independent Practice
 
 Try this problem from [Interview Cake](https://www.interviewcake.com/question/java/coin)
-
 
 ### Check for Understanding
 
