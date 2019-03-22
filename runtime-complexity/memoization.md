@@ -44,12 +44,15 @@ part of the code that was already run!
 - [Geeks for Geeks](https://www.geeksforgeeks.org/memoization-1d-2d-and-3d/)
 - [Codeburst.io: Understanding Javascript Memoization in 3 Minutes](https://codeburst.io/understanding-memoization-in-3-minutes-2e58daf33a19)
 - [HackerRank Video: Memoization and Dynamic Programming](https://youtu.be/P8Xa2BitN3I)
+- [Geeks for Geeks: Understanding dynamic programming and it's two types](https://www.geeksforgeeks.org/tabulation-vs-memoizatation/)
 
 ### Lesson
 
 This lesson follows the [Memoization Slideshow](https://docs.google.com/presentation/d/1BipDMgjZd3u-QsrPNCljH-Wv2l3tYRAUz8LWnxzt4s8/edit#slide=id.p).
 
 Read through the history of memoization and 'What is memoization' slides and get familiar with the new vocabulary.
+
+Before we read about Memoization,we need to understand that it is a part of Dynamic Programming. Dynamic programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-comupute them when needed later. Memoization (top-down approach), along with its “sibling” tabulation (bottom-up approach), are the two main Dynamic Programming techniques.
 
 Memoization is when your code has a function that returns the same results every time given the same input. The result is stored in a cache in order to be used again without needing to take time to re-run the function. Remember that memoization is all about 
 saving time. 
